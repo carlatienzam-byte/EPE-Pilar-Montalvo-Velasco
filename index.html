@@ -1,0 +1,136 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora de Avernturas</title>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.x.x/dist/aframe-event-set-component.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.7.0/dist/aframe-extras.min.js"></script>
+    
+
+
+
+    
+</head>
+<body>
+    <a-scene>
+          
+        <a-light id="ambiente" type="ambient" color="#FFFFFF" intensity="1"></a-light>
+
+        <a-box 
+            scale="3.6 3.6 3.6" 
+            position="-18 2 8" 
+            color= "green" 
+            event-set__enter="_event: mouseenter; color: #6F4E37"
+            event-set__leave="_event: mouseleave; color: green">
+        </a-box>
+
+        <a-gltf-model 
+        alt="suelo"
+            src="cesped_opt.glb" 
+            scale="5 5 5"
+			position="0 -0.25 0">
+        </a-gltf-model>
+
+        <a-gltf-model 
+            alt="jake el perro"
+                src="jake_the_dog_opt.glb"
+                position=" -5.256 0.178 6.854"
+                rotation="0 -50.323 0"
+                scale=" 1 1 1"
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 1000; easing: linear">
+        </a-gltf-model>
+
+        <a-gltf-model 
+        alt="mundo"
+                src="skybox_minecraft_daylight_opt.glb"
+                scale=" 200 200 200"
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 700000; easing: linear">
+        </a-gltf-model>
+
+        <a-entity 
+            alt="sol"
+                gltf-model="sun_opt.glb"
+				animation-mixer  
+                rotation=" 0 0 0"
+                scale="4 4 4"
+                position="101.18345 164.99841 -223.70109">
+        </a-entity>
+       <a-light id="soliluminado" type="point" color="#FFFFFF" position="101.18345 153.75238 -154.15239" intensity="2000" light="color: #ffffff; intensity: 500" scale="4 4 4"></a-light>
+
+
+        <a-gltf-model 
+        alt="casa del perro"
+                src="the_treehouse_opt.glb"
+                position="-1.207 -0.506 -3.252"
+                scale=" 27.732 27.120 24.362"
+                rotation=" 0 16.686 0"
+                sound="src: #intro; on: mouseenter">
+        </a-gltf-model>
+
+        <a-gltf-model 
+            src="https://cdn.tinyglb.com/models/1ed1d90cf5174510b052eb526efd6365.glb"
+            position="0 0 0"
+            scale="0.01 0.01 0.01">
+        </a-gltf-model>
+
+        <a-entity gltf-model="animated_moon_opt.glb" animation-mixer="" scale="50 50 50" position="-67.94762 99.52 226.48211">
+        </a-entity>
+       
+        <a-gltf-model 
+            alt="2arboles"
+            src="arboles_opt.glb"
+            scale="2.562 2.562 2.562"
+            rotation="0 0 0"
+            position="0.516 0 -17.891">
+        </a-gltf-model>
+       
+         <a-gltf-model
+            alt="1arboles"
+            src="arboles_opt.glb"
+            scale="2.562 2.562 2.562"
+            rotation="0 0 0"
+            position="0.516 0 -17.891">
+        </a-gltf-model>
+        
+         <a-gltf-model
+            alt="marceline"
+            src="marceline_the_vampire_queen_opt.glb"
+            scale="2.207 2.207 2.207"
+            rotation="0 -32.675 0"
+            position="6.521 0 5.595"
+            sound="src: #cancionmarceline; on:mouseenter">
+        </a-gltf-model>
+
+         <a-gltf-model
+            alt="kake"
+            src="house_cat_opt.glb"
+            scale="1.151 1.151 1.151"
+            rotation="0 -32.675 3.418"
+            position="-5.239 0 3.418">
+        </a-gltf-model>
+
+         <a-gltf-model
+            alt="chico"
+            src="finn_adventure_time_opt.glb"
+            scale="3.509 3.509 3.509"
+            rotation="0 -32.675 0"
+            position="-13.628 28.778  -3.481"
+            event-set__enter="_event: mouseenter; _target: #pensamiento; visible: true"
+            event-set__leave="_event: mouseleave; _target: #pensamiento; visible: false">
+            
+        </a-gltf-model>
+
+        <a-entity
+            camera look-controls wasd-controls="fly: true; acceleration: 80" position="0 2 5"><a-cursor></a-cursor>
+        </a-entity>
+        <a-assets>
+            <a-sound id="cancionmarceline" src="Soy tú problema castellano letra (hora de aventuras).mp3"></a-sound>
+        </a-assets>
+        
+        
+    </a-scene>
+</body>
+</html>
+
+
